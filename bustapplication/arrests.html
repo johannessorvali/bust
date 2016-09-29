@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    
+    
+    
+    
+    
+    <head>
+        
+      <style>
+
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+li {
+    float: left;
+}
+
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 270px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #FF00FF;
+}      
+          
+ div.button {text-align: center;
+    
+} 
+</style>
+  
+        
+        
+        
+        
+        <title>Drug Bust Application</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+
+         <h1 align = "center">  <font face="impact">    D R U G &nbsp; &nbsp;   B U S T </font>   </h1>
+        
+        <hr/>
+        <hr/>
+        
+            <ul align = "center">
+                <li> <a th:href="@{/}">   <font face="arial">  A R R E S T S </font> </a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </li>
+                <li> <a th:href="@{/storage}">   <font face="arial">  S T O R A G E </font> </a> </li>
+            </ul>
+       
+        
+        <hr/>
+        <hr/>
+        <h2 align = "center">  <font face="impact"> A d d &nbsp; &nbsp; a n &nbsp; &nbsp; a r r e s t </font> </h2>
+        
+        <font face="arial">
+            <div class="button">
+            <form action="/" method="POST">
+            
+            
+                Date of Arrest: <input type="date" name="arrestDate" />
+                Cop Name: <input type="text" name="copName" />
+                Criminal Name: <input type="text" name="criminalName"/>
+                Drug: <select name="drugName">
+                            <option value="cocaine">cocaine</option>
+                            <option value="methamphetamine">methamphetamine</option>
+                            <option value="amphetamine">amphetamine</option>
+                            <option value="heroin">heroin</option>
+                            <option value="lsd">lsd</option>
+                            <option value="ecstacy">ecstacy</option>
+                            <option value="marijuana">marijuana</option>
+                            <option value="other">other</option>
+                        </select>
+                
+               
+                Amount (g): <input type="text" name="amount" /><br/> <br/>
+            
+            
+            <input style="width: 300px;"  type="submit" value="Add arrest to database"/>
+        </form>
+         </div>
+   
+        <hr/>
+        <hr/>
+         <h2 align = "center">   <font face="impact">  A r r e s t s &nbsp; &nbsp;m a d e &nbsp; &nbsp; s o &nbsp; &nbsp; f a r: </font> </h2>
+        <table align = "center">
+            <tr>
+                <th>Date of Arrest &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                <th>Cop Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                <th>Criminal Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                <th>Confiscated Drug &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                <th>Amount (g) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                
+            </tr>
+            <tr th:each="arrest : ${arrests}">
+                
+                <td th:text="${arrest.arrestDate}">Arrest date</td>
+                <td th:text="${arrest.copName}">Cop name</td>
+                <td th:text="${arrest.criminalName}">Criminal name</td>
+                
+                <td th:text="${arrest.drugName}">Drug</td>
+                <td th:text="${arrest.amount}">Amount</td>
+                
+                
+                
+            </tr>
+        </table>
+        
+        </font>
+        
+        
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

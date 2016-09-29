@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    
+    
+    
+    
+    
+    <head>
+        
+      <style>
+          
+         
+
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+li {
+    float: left;
+}
+
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 270px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #FF00FF;
+}      
+          
+
+
+ div.button {text-align: center;
+    
+} 
+</style>
+  
+        
+        
+        
+        
+        <title>Drug Storage</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+
+         <h1 align = "center">  <font face="impact">    D R U G &nbsp; &nbsp;   B U S T </font>   </h1>
+        
+        <hr/>
+        <hr/>
+        <ul align = "center">
+                <li> <a th:href="@{/}">   <font face="arial">  A R R E S T S </font> </a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </li>
+                <li> <a th:href="@{/storage}">   <font face="arial">  S T O R A G E </font> </a> </li>
+            </ul>
+        
+        <hr/>
+        <hr/>
+        
+   
+        <h2 align = "center">   <font face="impact">  A m o u n t s  &nbsp; &nbsp;o f &nbsp; &nbsp;d r u g s&nbsp; &nbsp; i n&nbsp; &nbsp; s t o r a g e: </font> </h2>
+
+        
+        <font face = "arial">
+        <table align = "center">
+            <tr>
+                <th>Drug &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                <th>Amount in storage (g) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                
+                
+            </tr>
+            <tr>
+                <td>cocaine</td> <td th:text="${amounts[0]}">amount of cocaine</td>
+            </tr>
+            <tr>
+                <td>methamphetamine</td> <td th:text="${amounts[1]}">amount of cocaine</td>
+            </tr>
+            <tr>
+                <td>amphetamine</td> <td th:text="${amounts[2]}">amount of cocaine</td>
+            </tr>
+            <tr>
+                <td>heroin</td> <td th:text="${amounts[3]}">amount of cocaine</td>
+            </tr>
+            <tr>
+                <td>lsd</td> <td th:text="${amounts[4]}">amount of cocaine</td>
+            </tr>
+            <tr>
+                <td>ecstacy</td> <td th:text="${amounts[5]}">amount of cocaine</td>
+            </tr>
+            <tr>
+                <td>marijuana</td> <td th:text="${amounts[6]}">amount of cocaine</td>
+            </tr>
+            <tr>
+                <td>other</td> <td th:text="${amounts[7]}">amount of cocaine</td>
+            </tr>
+        
+        
+        
+        
+        
+        </table>
+        </font>
+        
+        
+        
+        
+        
+        
+        
+    </body>
+</html>
