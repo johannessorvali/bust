@@ -1,0 +1,12 @@
+This pathetic project is a simulation of a drug enforcement unit's application
+where cops can add to a database the drug arrests they have made.
+
+Each arrest has a date, a cop name, a criminal name, a drug name and the amount of the drug confiscated.
+
+The date and drug name variables are selected from predefined menus.
+
+When an arrest is added to database, the amount of drug confiscated is also added to the overall amount of
+this drug in the storage. 
+
+There are two pages: arrest.html where the arrests are made and storage.html which shows the amounts of drugs 
+in the storage. 
